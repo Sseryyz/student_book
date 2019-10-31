@@ -1,3 +1,38 @@
 body{
   background-color: rgb(77, 116, 129);
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+.group{
+  position: relative;
+  top: 50px;
+  left: 50%;
+  transform: translate(-50%);
+  height: 350px;
+  width: 700px;
+  border: 10px solid black;
+  border-radius: 30px;
+  background-color: #fff;
+}
+.group p{
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  border-bottom: 5px solid black;
+  padding: 3px 0;
+  margin: 0;
+}
+.container{
+  display: flex;
+  justify-content: space-between;
+}
+.student{
+  height: 300px;
+  width: 33.333%;
+  text-align: center;
+  border: 1px solid gray;
+}
+.student img{
+  height: 80px;
 }
