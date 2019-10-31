@@ -1,19 +1,31 @@
+'use strict'
 
 let gradebook = {
     math: "",
     physics: "",
 }
 
-function Student() {
-    this.name = name,
-    this.gradebook = gradebook;
+class Student {
+    constructor() {
+        this.name = name,
+        this.gradebook = gradebook;
+    }
+
+    myName() {
+        alert(this.name);
+    }
+
+    myMarks() {
+        alert(this.gradebook);
+    }
 }
+
 
 let Vasya = new Student([
     this.name = "Vasya",
     gradebook = {
-    math: 5,
-    physics: 4,
+        math: 5,
+        physics: 4,
     }
 ]);
 
@@ -35,10 +47,7 @@ let Ivan = new Student([
 
 console.log(Vasya, Petr, Ivan);
 
-let group = {
-
-}
-
+Petr.myMarks();
 
 
 
