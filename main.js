@@ -1,58 +1,44 @@
-'use strict'
-
-let gradebook = {
-    math: "",
-    physics: "",
-}
-
 class Student {
-    constructor() {
-        this.name = name,
-        this.gradebook = gradebook;
-    }
-
-    myName() {
-        alert(this.name);
-    }
-
-    myMarks() {
-        alert(this.gradebook);
+    constructor(name) {
+        this.name = name;
+        this.book = new Gradebook();
     }
 }
-
-
-let Vasya = new Student([
-    this.name = "Vasya",
-    gradebook = {
-        math: 5,
-        physics: 4,
+class Group {
+    constructor() {
+        this.students = [];
     }
-]);
-
-let Petr = new Student([
-    this.name = "Petr",
-    gradebook = {
-        math: 3,
-        physics: 5,
+    addStudent (student) {
+        this.students.push(student);
     }
-]);
+    getAllMarksMath () {
 
-let Ivan = new Student([
-    this.name = "Ivan",
-    gradebook = {
-        math: 4,
-        physics: 5,
+        return [
+            [newGroup.students[0].name, newGroup.students[0].book.getMarks().math],
+        ];
     }
-]);
 
-console.log(Vasya, Petr, Ivan);
+}
+class Gradebook {
+    constructor() {
+        this.math = Math.random();
+        this.physics = Math.random();
+        this.chemistry = Math.random();
+    }
+    getMarks () {
+        return {
+            math: this.math,
+            chemistry: this.chemistry,
+            physics: this.physics,
+        }
+    }
+}
+let vasya = new Student("Vasya");
+let petr = new Student("Petr");
 
-Petr.myMarks();
-
-
-
-
-
+let newGroup = new Group();
+newGroup.addStudent(vasya);
+newGroup.addStudent(petr);
 
 
 
