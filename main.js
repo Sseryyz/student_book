@@ -12,18 +12,21 @@ class Group {
         this.students.push(student);
     }
     getAllMarksMath () {
+        Object.entries(this.students[0].book.getMarks())
+        Object.entries(this.students[1].book.getMarks())
 
         return [
             [newGroup.students[0].name, newGroup.students[0].book.getMarks().math],
+            [newGroup.students[1].name, newGroup.students[1].book.getMarks().math],
         ];
     }
 
 }
 class Gradebook {
     constructor() {
-        this.math = Math.random();
-        this.physics = Math.random();
-        this.chemistry = Math.random();
+        this.math = Math.random().toFixed(1);
+        this.physics = Math.random().toFixed(1);
+        this.chemistry = Math.random().toFixed(1);
     }
     getMarks () {
         return {
