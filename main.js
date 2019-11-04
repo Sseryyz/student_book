@@ -20,6 +20,24 @@ class Group {
             [newGroup.students[1].name, newGroup.students[1].book.getMarks().math],
         ];
     }
+    getAllMarksPhysics () {
+        Object.entries(this.students[0].book.getMarks())
+        Object.entries(this.students[1].book.getMarks())
+
+        return [
+            [newGroup.students[0].name, newGroup.students[0].book.getMarks().physics],
+            [newGroup.students[1].name, newGroup.students[1].book.getMarks().physics],
+        ];
+    }
+    getAllMarksChemistry () {
+        Object.entries(this.students[0].book.getMarks())
+        Object.entries(this.students[1].book.getMarks())
+
+        return [
+            [newGroup.students[0].name, newGroup.students[0].book.getMarks().chemistry],
+            [newGroup.students[1].name, newGroup.students[1].book.getMarks().chemistry],
+        ];
+    }
 
 }
 class Gradebook {
