@@ -12,46 +12,42 @@ class Group {
         this.students.push(student);
     }
     getAllMarksMath () {
-        Object.entries(this.students[0].book.getMarks())
-        Object.entries(this.students[1].book.getMarks())
+        // Object.entries(this.students[0].book.marks())
+        // Object.entries(this.students[1].book.marks())
+
+        this.students.forEach(function(item, i, arr) {
+            console.log(item + i + arr)
+        })
+
+        // return [
+        //     [newGroup.students[0].name, newGroup.students[0].book.marks().math],
+        //     [newGroup.students[1].name, newGroup.students[1].book.marks().math],
+        // ];
+    }
+    getAllMiddleMark () {
+        Object.entries(this.students[0].book.getMiddleMark())
+        Object.entries(this.students[1].book.getMiddleMark())
 
         return [
-            [newGroup.students[0].name, newGroup.students[0].book.getMarks().math],
-            [newGroup.students[1].name, newGroup.students[1].book.getMarks().math],
-        ];
+            +newGroup.students[0].book.getMiddleMark() + +newGroup.students[1].book.getMiddleMark()
+        ]
     }
-    getAllMarksPhysics () {
-        Object.entries(this.students[0].book.getMarks())
-        Object.entries(this.students[1].book.getMarks())
-
-        return [
-            [newGroup.students[0].name, newGroup.students[0].book.getMarks().physics],
-            [newGroup.students[1].name, newGroup.students[1].book.getMarks().physics],
-        ];
-    }
-    getAllMarksChemistry () {
-        Object.entries(this.students[0].book.getMarks())
-        Object.entries(this.students[1].book.getMarks())
-
-        return [
-            [newGroup.students[0].name, newGroup.students[0].book.getMarks().chemistry],
-            [newGroup.students[1].name, newGroup.students[1].book.getMarks().chemistry],
-        ];
-    }
-
 }
 class Gradebook {
-    constructor() {
-        this.math = Math.random().toFixed(1);
-        this.physics = Math.random().toFixed(1);
-        this.chemistry = Math.random().toFixed(1);
+    constructor(math, physics, chemistry) {
+        this.math = 5;
+        this.physics = 4;
+        this.chemistry = 3;
     }
-    getMarks () {
+    marks () {
         return {
             math: this.math,
             chemistry: this.chemistry,
-            physics: this.physics,
+            physics: this.physics
         }
+    }
+    middleMark () {
+        return ((+this.math + +this.physics + +this.chemistry) / 3).toFixed(1)
     }
 }
 let vasya = new Student("Vasya");
