@@ -11,26 +11,25 @@ class Group {
     addStudent (student) {
         this.students.push(student);
     }
-    getAllMarksMath () {
-        // Object.entries(this.students[0].book.marks())
-        // Object.entries(this.students[1].book.marks())
-
-        this.students.forEach(function(item, i, arr) {
-            console.log(item + i + arr)
-        })
-
-        // return [
-        //     [newGroup.students[0].name, newGroup.students[0].book.marks().math],
-        //     [newGroup.students[1].name, newGroup.students[1].book.marks().math],
-        // ];
+    all () {
+        this.marksChemistry(),
+        this.marksMath(),
+        this.marksPhysics()
     }
-    getAllMiddleMark () {
-        Object.entries(this.students[0].book.getMiddleMark())
-        Object.entries(this.students[1].book.getMiddleMark())
-
-        return [
-            +newGroup.students[0].book.getMiddleMark() + +newGroup.students[1].book.getMiddleMark()
-        ]
+    marksMath () {
+        for (let i = 0; i < this.students.length; i++) {
+            console.log([newGroup.students[i].name, newGroup.students[i].book.marks().math])
+        }
+    }
+    marksChemistry () {
+        for (let i = 0; i < this.students.length; i++) {
+            console.log([newGroup.students[i].name, newGroup.students[i].book.marks().chemistry])
+        }
+    }
+    marksPhysics () {
+        for (let i = 0; i < this.students.length; i++) {
+            console.log([newGroup.students[i].name, newGroup.students[i].book.marks().physics])
+        }
     }
 }
 class Gradebook {
@@ -46,6 +45,7 @@ class Gradebook {
             physics: this.physics
         }
     }
+
     middleMark () {
         return ((+this.math + +this.physics + +this.chemistry) / 3).toFixed(1)
     }
