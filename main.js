@@ -11,15 +11,17 @@ class Group {
     addStudent (student) {
         this.students.push(student);
     }
-    all () {
-        this.marksChemistry(),
-        this.marksMath(),
-        this.marksPhysics()
+    all (subject) {
+        const result = {};
+        for (let student of this.students) {
+            result[student.name] = student.book[subject]
+        }
+
+        return result;
     }
     marksMath () {
-        for (let i = 0; i < this.students.length; i++) {
-            console.log([newGroup.students[i].name, newGroup.students[i].book.marks().math])
-        }
+        console.log(vasya.book.math)
+
     }
     marksChemistry () {
         for (let i = 0; i < this.students.length; i++) {
