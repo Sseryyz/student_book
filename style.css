@@ -28,10 +28,13 @@ body{
   justify-content: space-between;
 }
 .student{
-  height: 300px;
+  height: 305px;
   width: 33.333%;
   text-align: center;
-  border: 1px solid gray;
+  border-right: 1px solid gray;
+}
+.student:last-child{
+  border-right: 0;
 }
 .student img{
   height: 80px;
